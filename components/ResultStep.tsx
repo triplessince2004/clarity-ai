@@ -15,7 +15,6 @@ type ResultStepProps = {
 };
 
 export default function ResultStep({ onStartOver, ratings, data }: ResultStepProps) {
-  // Calculate scores only when data changes
   const scores = useMemo(() => {
     let scoreA = 0;
     let scoreB = 0;
@@ -27,13 +26,12 @@ export default function ResultStep({ onStartOver, ratings, data }: ResultStepPro
   }, [data, ratings]);
 
   const winner = scores.scoreA > scores.scoreB ? data.optionA : data.optionB;
-  const loser = scores.scoreA > scores.scoreB ? data.optionB : data.optionA;
   const isTie = scores.scoreA === scores.scoreB;
 
   return (
     <div className="w-full max-w-2xl text-center animate-fade-in">
       <h2 className="text-2xl md:text-3xl font-bold text-slate-800">
-        Based on your values, here's our recommendation:
+        Based on your values, here&apos;s our recommendation:
       </h2>
       
       <div className="mt-8 p-6 bg-white border-2 border-blue-500 rounded-lg shadow-lg">
