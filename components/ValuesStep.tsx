@@ -29,7 +29,7 @@ export default function ValuesStep({ onNext, values, setValues }: ValuesStepProp
             key={index}
             type="text"
             value={value}
-            onChange={(e) => handleValue-change(index, e.target.value)}
+            onChange={(e) => handleValueChange(index, e.target.value)}
             className="w-full p-3 border rounded-lg"
           />
         ))}
